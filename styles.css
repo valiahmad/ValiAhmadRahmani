@@ -7,11 +7,11 @@ body {
 }
 
 header {
-    background: #333;
+    background: url('files/header-background.jpg') no-repeat center center/cover;
     color: #fff;
     padding-top: 30px;
-    min-height: 70px;
-    border-bottom: #0779e4 3px solid;
+    min-height: 300px;
+    border-bottom: #FFF 5px solid;
 }
 
 header h1 {
@@ -21,7 +21,7 @@ header h1 {
 }
 
 nav ul {
-    background: #555;
+    background: #004052;
     list-style: none;
     text-align: center;
     padding: 0;
@@ -42,6 +42,19 @@ nav ul li a {
 section {
     padding: 20px;
     margin: 0 10%;
+}
+
+/* Initial state of the image */
+.scroll-image {
+    width: 100%; /* Adjust this as needed */
+    height: auto;
+    margin: 20px 0; /* Adds space around the image */
+    opacity: 0;
+    transition: opacity 2s ease-out; /* Smooth transition for the fade-in effect */
+}
+/* Class to add when the image becomes visible */
+.scroll-image-visible {
+    opacity: 1;
 }
 
 footer {

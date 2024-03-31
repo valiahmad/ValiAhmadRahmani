@@ -12,25 +12,47 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a developer, designer, and content creator. This is my personal website where I share my projects, thoughts, and ideas with the world. Stay tuned!</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>My projects showcase will be available soon.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Feel free to reach out to me via email at <a href="mailto:your-email@example.com">your-email@example.com</a>.</p>
+    <section>
+        <h2>Welcome to my Website</h2>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <p>This is an introduction or other content before the image appears.</p>
+        <!-- Image with the .scroll-image class -->
+        <img src="files/scroll-image.jpg" alt="Descriptive text for the image" class="scroll-image">
+        <p>More content that follows the image, encouraging users to scroll.</p>
     </section>
     <footer>
-        <p>Follow me on social media: [Links to social media]</p>
+        <p>© Your Name. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+          let observer = new IntersectionObserver((entries, observer) => { 
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-image-visible');
+              }
+            });
+          }, { threshold: 0.1 }); // Adjust threshold as needed
+      
+          // Target elements with the 'scroll-image' class
+          document.querySelectorAll('.scroll-image').forEach(img => {
+            observer.observe(img);
+          });
+        });
+      </script>
 </body>
 </html>
