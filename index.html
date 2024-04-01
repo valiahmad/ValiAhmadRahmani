@@ -6,11 +6,23 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <h1>Welcome to My Website</h1>
+        <div class="header-video">
+            <video autoplay muted loop>
+                <source src="files/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Any other content you want in the header goes here -->
+        <h1>
+            <p>V A R</p>
+            <p>Vali Ahmad Rahmani</p>
+        </h1>
     </header>
     <nav>
+        <div class="logo">V A R</div> <!-- Logo or initial on the left -->
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Me</a></li>
@@ -35,6 +47,12 @@
         <img src="files/scroll-image.jpg" alt="Descriptive text for the image" class="scroll-image">
         <p>More content that follows the image, encouraging users to scroll.</p>
     </section>
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="files/video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <footer>
         <p>© Your Name. All rights reserved.</p>
     </footer>
@@ -53,6 +71,33 @@
             observer.observe(img);
           });
         });
-      </script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const nav = document.querySelector('nav'); // Target the entire nav element
+            const stickyOffset = nav.offsetTop;
+        
+            function scrollFunction() {
+                if (window.pageYOffset >= stickyOffset) {
+                    nav.classList.add("fixed");
+                } else {
+                    nav.classList.remove("fixed");
+                }
+            }
+        
+            window.onscroll = function() {
+                scrollFunction();
+            };
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('nav ul li a');
+            // Use location.pathname to ignore query strings and hashes in comparison
+            const currentPath = window.location.pathname;
+        
+            links.forEach(link => {
+                if (link.pathname === currentPath) {
+                    link.classList.add('clicked'); // Highlight the current page link
+                }
+            });
+        });
+    </script>
 </body>
 </html>

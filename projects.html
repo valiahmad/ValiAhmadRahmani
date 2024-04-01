@@ -25,5 +25,18 @@
     <footer>
         <p>© Your Name. All rights reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const links = document.querySelectorAll('nav ul li a');
+            // Use location.pathname to ignore query strings and hashes in comparison
+            const currentPath = window.location.pathname;
+        
+            links.forEach(link => {
+                if (link.pathname === currentPath) {
+                    link.classList.add('clicked'); // Highlight the current page link
+                }
+            });
+        });
+    </script>
 </body>
 </html>
