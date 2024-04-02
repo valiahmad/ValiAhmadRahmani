@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Vali Ahmad Rahmani</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+
     <header>
         <div class="header-video">
             <video autoplay muted loop>
@@ -17,87 +19,75 @@
         </div>
         <!-- Any other content you want in the header goes here -->
         <h1>
-            <p>V A R</p>
             <p>Vali Ahmad Rahmani</p>
         </h1>
+        <button id="scrollButton">SCROLL FOR MORE</button>
     </header>
+
+
     <nav>
-        <div class="logo">V A R</div> <!-- Logo or initial on the left -->
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="logo">V A R</div>
     </nav>
-    <section>
+
+
+
+
+
+    <section id="home">
         <h2>Welcome to my Website</h2>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
-        <p>This is an introduction or other content before the image appears.</p>
         <p>This is an introduction or other content before the image appears.</p>
         <!-- Image with the .scroll-image class -->
         <img src="files/scroll-image.jpg" alt="Descriptive text for the image" class="scroll-image">
         <p>More content that follows the image, encouraging users to scroll.</p>
     </section>
+
+
+
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>This section contains information about you or your business.</p>
+    </section>
+
+
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Showcase your work or projects here.</p>
+    </section>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Provide contact information or a form here.</p>
+    </section>
+
+
+
+
+
+
+
     <div class="video-container">
         <video autoplay muted loop>
             <source src="files/video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
+
+
     <footer>
         <p>© Your Name. All rights reserved.</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-          let observer = new IntersectionObserver((entries, observer) => { 
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('scroll-image-visible');
-              }
-            });
-          }, { threshold: 0.1 }); // Adjust threshold as needed
-      
-          // Target elements with the 'scroll-image' class
-          document.querySelectorAll('.scroll-image').forEach(img => {
-            observer.observe(img);
-          });
-        });
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const nav = document.querySelector('nav'); // Target the entire nav element
-            const stickyOffset = nav.offsetTop;
-        
-            function scrollFunction() {
-                if (window.pageYOffset >= stickyOffset) {
-                    nav.classList.add("fixed");
-                } else {
-                    nav.classList.remove("fixed");
-                }
-            }
-        
-            window.onscroll = function() {
-                scrollFunction();
-            };
-        });
-        document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('nav ul li a');
-            // Use location.pathname to ignore query strings and hashes in comparison
-            const currentPath = window.location.pathname;
-        
-            links.forEach(link => {
-                if (link.pathname === currentPath) {
-                    link.classList.add('clicked'); // Highlight the current page link
-                }
-            });
-        });
-    </script>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
