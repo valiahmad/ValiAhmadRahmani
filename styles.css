@@ -82,6 +82,7 @@ section p {
 }
 
 footer {
+    font-family: Quantum;
     text-align: center;
     padding: 10px;
     background-color: #333;
@@ -89,10 +90,28 @@ footer {
 }
 
 
-.content {
-    display: flex; /* This enables flexbox layout */
-    align-items: center; /* This vertically centers the items if they have different heights */
-    justify-content: space-around; /* This adds space around the items. Use 'space-between' for no outer margin */
+.degree-subject-c {
+    font-family: Sheiron Rodina;
+    color: #00ff80; 
+    font-weight: bold;
+}
+
+.degree-subject {
+    font-family: Sheiron Rodina;
+    color: #fff;
+    font-weight: bold;
+}
+
+.university-name {
+    font-family: Raspoutine;
+    color: #fff;
+    font-weight: bold;
+}
+
+.content-edu {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around; 
 }
 
 .text, .image {
@@ -122,10 +141,44 @@ footer {
     opacity: 1;
 }
 
+.research-interests-list ul {
+    font-family: Raspoutine;
+    counter-reset: item; /* Initialize the counter */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;  
+    list-style: none;
+    position: relative; 
+    padding-left: 0;
+}
+
+.research-interests-list li {
+    font-size: 14pt;
+    position: relative;
+    background-color: #000; /* Or the color matching your design */
+    padding: 20px; /* Added padding for visibility of numbers behind text */
+}
+
+.research-interests-list li::before {
+    content: counter(item) " ";
+    counter-increment: item; /* Increments the counter for each list item */
+    position: absolute;
+    font-size: 4em; /* Large size for the numbers */
+    color: #ffffff; /* Color of the numbers */
+    opacity: 0.1; /* Decreases visibility to create a watermark effect */
+    z-index: 0; /* Ensures the number is behind the text */
+    top: 50%; /* Adjust vertical position */
+    left: 5%; /* Adjust horizontal position */
+    transform: translate(-50%, -50%); /* Center numbers behind text */
+    line-height: 1;
+    content: attr(data-number);
+}
+
+
 .video-container {
     position: relative;
-    width: 100%; /* Adjust based on your layout needs */
-    height: 75vh; /* Or any other height you prefer */
+    width: 100%; 
+    height: 75vh; 
     overflow: hidden;
 }
 
@@ -228,6 +281,22 @@ footer {
     font-family: 'Blanka';
     src: url('fonts/Blanka.woff2') format('woff2'),
          url('fonts/Blanka.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sheiron Rodina';
+    src: url('fonts/Sheiron Rodina.woff2') format('woff2'),
+         url('fonts/Sheiron Rodina.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Shintia Script';
+    src: url('fonts/Shintia Script.woff2') format('woff2'),
+         url('fonts/Shintia Script.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }

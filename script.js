@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     scrollButton.addEventListener('click', function(e) {
         e.preventDefault(); // Prevent default button action
-        smoothScrollTo(document.querySelector('#home').offsetTop, 1000); // Scroll to #home section over 1000ms
+        smoothScrollTo(document.querySelector('#education').offsetTop, 1000); // Scroll to #home section over 1000ms
     });
 
     function smoothScrollTo(targetPosition, duration) {
@@ -42,4 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         requestAnimationFrame(animation);
     }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const listItems = document.querySelectorAll('.research-interests-list li');
+    listItems.forEach((li, index) => {
+        // Set a data-number attribute with the formatted number
+        const number = (index + 1).toString().padStart(2, '0');
+        li.setAttribute('data-number', number);
+    });
 });
